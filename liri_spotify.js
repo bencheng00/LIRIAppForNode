@@ -21,7 +21,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
     for (var i=0;i<20;i++){
     console.log(tweets[i].text);
     console.log(tweets[i].created_at);
-    console.log("----------------------------------");
+    console.log("-----------------------------------------------------------------");
 	}
   }
 });
@@ -30,7 +30,7 @@ client.get('statuses/user_timeline', params, function(error, tweets, response) {
 
 
 //SPOTIFY
-if (command=="spotify-this-song"){
+else if (command=="spotify-this-song"){
 
 if (process.argv[3]!=null){
   spotify.search({ type: 'track', query: process.argv[3] }, function(err, data) {
@@ -45,7 +45,7 @@ if (process.argv[3]!=null){
         console.log("Song Name: "+data.tracks.items[i].name);
         console.log("Preview: "+data.tracks.items[i].preview_url);
         console.log("Album Name: "+data.tracks.items[i].album.name);
-        console.log("----------------------------------");
+        console.log("------------------------------------------------------------------------------------------");
         }
     });
 }
@@ -61,7 +61,7 @@ spotify.search({ type: 'track', query: 'the sign' }, function(err, data) {
         console.log("Song Name: "+data.tracks.items[6].name);
         console.log("Preview: "+data.tracks.items[6].preview_url);
         console.log("Album Name: "+data.tracks.items[6].album.name);
-        console.log("----------------------------------");      
+        console.log("------------------------------------------------------------------------------------------");      
     });
 }
 }
